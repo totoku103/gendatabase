@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="me.totoku103.gendatabase.mapper.InsertMapper"
+>
+    <insert id="insertBulk">
+        INSERT INTO IMC_MT_MSG
+        ( MT_TYPE, STATUS, PRIORITY, RESERVED_DATE, PHONE_NUMBER, COUNTRY_CODE, CALLBACK, MESSAGE)
+        VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+             ( #{item.mtType}, #{item.status}, #{item.priority}, #{item.reservedDate}, #{item.phoneNumber}, #{item.countryCode}, #{item.callback}, #{item.message})
+        </foreach>
+    </insert>
+
+</mapper>

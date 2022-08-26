@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://10.147.1.90:3306/API_SERVICE
+    username: imc-dev
+    password: humuson0722
+mybatis:
+  mapper-locations: sql/*.xml
+  type-aliases-package: me.totoku103.gendatabase.model
+
+
+logging:
+  level:
+    root: info
+    me.totoku103.gendatabase.mapper.InsertMapper: off
